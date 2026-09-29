@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central Motion Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header>
+      <p class="eyebrow">DEMO DE ACESSIBILIDADE</p>
+      <h1>Central Motion Tracker</h1>
+      <p class="subtitle">A bolinha central acompanha objetos em movimento selecionados.</p>
+    </header>
+
+    <section class="controls" aria-label="Controles">
+      <button id="startButton" class="primary">Iniciar câmera</button>
+      <button id="stopButton" disabled>Parar</button>
+      <label class="toggle"><input id="autoFollow" type="checkbox" checked /> Seguir após selecionar</label>
+      <span id="status" role="status">Câmera parada</span>
+    </section>
+
+    <section class="stage-wrap">
+      <div id="stage" class="stage" aria-label="Área de detecção. Clique em um marcador para selecioná-lo.">
+        <video id="video" autoplay muted playsinline></video>
+        <canvas id="motionCanvas"></canvas>
+        <div id="centerBall" class="center-ball" title="Cursor virtual"></div>
+        <div id="hint">Permita o acesso à câmera e mova um objeto diante dela</div>
+      </div>
+    </section>
+
+    <footer>
+      <span id="objectCount">Objetos detectados: 0</span>
+      <span>O cursor exibido é virtual e funciona somente dentro desta página.</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

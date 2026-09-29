@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; }
+body { margin: 0; min-height: 100vh; background: #0b1020; color: #eef2ff; }
+.app-shell { width: min(1000px, 94vw); margin: 0 auto; padding: 38px 0 24px; }
+header { margin-bottom: 22px; }
+.eyebrow { color: #62e6c5; font-size: .75rem; font-weight: 800; letter-spacing: .15em; margin: 0 0 8px; }
+h1 { margin: 0; font-size: clamp(2rem, 5vw, 3.5rem); }
+.subtitle { color: #aab4d1; margin: 10px 0 0; }
+.controls { align-items: center; display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 16px; }
+button { background: #222c49; border: 1px solid #3b496d; border-radius: 9px; color: #fff; cursor: pointer; padding: 10px 16px; font-weight: 700; }
+button:hover:not(:disabled) { border-color: #62e6c5; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+.primary { background: #1e9d87; border-color: #37d1b1; }
+.toggle { color: #cbd4ed; font-size: .92rem; margin-left: 6px; }
+.toggle input { accent-color: #62e6c5; }
+#status { color: #aab4d1; font-size: .9rem; margin-left: auto; }
+.stage-wrap { background: #131b31; border: 1px solid #2b385b; border-radius: 16px; padding: 10px; }
+.stage { aspect-ratio: 16 / 9; background: #070b16; border-radius: 10px; overflow: hidden; position: relative; }
+video, canvas { height: 100%; left: 0; object-fit: cover; position: absolute; top: 0; width: 100%; }
+video { transform: scaleX(-1); }
+canvas { pointer-events: auto; }
+.center-ball { background: #62e6c5; border: 3px solid #eafffa; border-radius: 50%; box-shadow: 0 0 0 7px #62e6c533, 0 0 22px #62e6c5; height: 22px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); transition: left .18s ease-out, top .18s ease-out; width: 22px; z-index: 3; }
+.center-ball.following { background: #ffca58; box-shadow: 0 0 0 7px #ffca5833, 0 0 22px #ffca58; }
+#hint { color: #aab4d1; left: 50%; pointer-events: none; position: absolute; text-align: center; top: 50%; transform: translate(-50%, 30px); width: 90%; z-index: 4; }
+footer { color: #8995b5; display: flex; justify-content: space-between; font-size: .82rem; gap: 15px; margin-top: 12px; }
+@media (max-width: 620px) { #status { flex-basis: 100%; margin-left: 0; } footer { flex-direction: column; } }
